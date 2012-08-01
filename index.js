@@ -1,1 +1,1 @@
-module.exports = require('./lib/faker_ext');
+module.exports = require('./lib/charlatan');

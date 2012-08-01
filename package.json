@@ -1,18 +1,18 @@
 {
-    "name"        : "FakerExt",
+    "name"        : "Charlatan",
     "description" : "A library for generating fake data such as names, addresses, and phone numbers.",
     "version"     : "0.0.0",
     "keywords"    : ["faker", "dummy", "debug"],
-    "homepage"    : "https://github.com/shkuropat/FakerExt",
+    "homepage"    : "https://github.com/shkuropat/Charlatan",
 
     "author"      : "Eugene Shkuropat <e.shkuropat@gmail.com>",
     "repository"  : {
         "type"    : "git",
         "url"     : "http://github.com/Marak/Faker.js.git" 
     },
-    "bugs"        : { "url": "https://github.com/shkuropat/FakerExt/issues" },
-    "license"     : { "type": "MIT", "url": "https://github.com/shkuropat/FakerExt/blob/master/LICENSE" },
-    "repository"  : { "type": "git", "url": "git://github.com/shkuropat/FakerExt.git" },
+    "bugs"        : { "url": "https://github.com/shkuropat/Charlatan/issues" },
+    "license"     : { "type": "MIT", "url": "https://github.com/shkuropat/Charlatan/blob/master/LICENSE" },
+    "repository"  : { "type": "git", "url": "git://github.com/shkuropat/Charlatan.git" },
 
     "main"        : "./index.js",
     "engines"     : { "node": ">= 0.6.0" }
