@@ -10,6 +10,7 @@ REMOTE_REPO ?= $(shell git config --get remote.${REMOTE_NAME}.url)
 
 CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) master)
 GITHUB_PROJ := nodeca/${NPM_PACKAGE}
+SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
 
 
 help:
@@ -33,12 +34,6 @@ lint:
 
 
 test: lint
-	@if test ! `which mocha` ; then \
-		echo "You need 'mocha' installed in order to run tests." >&2 ; \
-		echo "  $ make dev-deps" >&2 ; \
-		exit 128 ; \
-		fi
-	NODE_ENV=test mocha
 
 
 doc:
@@ -48,7 +43,7 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
+	ndoc --output ./doc --link-format "${SRC_URL_FMT}" ./lib
 
 
 dev-deps:
@@ -58,7 +53,7 @@ dev-deps:
 		exit 128 ; \
 		fi
 	npm install -g jshint
-	npm install
+	npm install --dev
 
 
 gh-pages:
@@ -82,10 +77,6 @@ gh-pages:
 publish:
 	@if test 0 -ne `git status --porcelain | wc -l` ; then \
 		echo "Unclean working tree. Commit or stash changes first." >&2 ; \
-		exit 128 ; \
-		fi
-	@if test 0 -ne `git fetch ; git status | grep '^# Your branch' | wc -l` ; then \
-		echo "Local/Remote history differs. Please push/pull changes." >&2 ; \
 		exit 128 ; \
 		fi
 	@if test 0 -ne `git tag -l ${NPM_VERSION} | wc -l` ; then \
