@@ -15,6 +15,7 @@ SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{lin
 
 help:
 	echo "make help       - Print this help"
+	echo "make build			- Build source to single files (simple and minimized)"
 	echo "make lint       - Lint sources with JSHint"
 	echo "make test       - Lint sources and run all tests"
 	echo "make doc        - Build API docs"
@@ -23,6 +24,13 @@ help:
 	echo "make publish    - Set new version tag and publish npm package"
 	echo "make todo       - Find and list all TODOs"
 
+build-all: build-min
+
+build-single:
+	browserify ./lib/charlatan.js -o ./build/charlatan-${NPM_VERSION}.js
+
+build-min: build-single
+	uglifyjs -o ./build/charlatan-${NPM_VERSION}.min.js ./build/charlatan-${NPM_VERSION}.js
 
 lint:
 	if test ! `which jshint` ; then \
@@ -53,6 +61,8 @@ dev-deps:
 		exit 128 ; \
 		fi
 	npm install -g jshint
+	npm install -g browserify
+	npm install -g uglifyjs
 	npm install --dev
 
 
