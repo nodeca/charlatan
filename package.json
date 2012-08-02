@@ -2,13 +2,13 @@
     "name"        : "Charlatan",
     "description" : "A library for generating fake data such as names, addresses, and phone numbers.",
     "version"     : "0.0.0",
-    "keywords"    : ["faker", "dummy", "debug"],
+    "keywords"    : ["Charlatan", "faker", "fake", "dummy", "debug"],
     "homepage"    : "https://github.com/shkuropat/Charlatan",
 
     "author"      : "Eugene Shkuropat <e.shkuropat@gmail.com>",
     "repository"  : {
         "type"    : "git",
-        "url"     : "http://github.com/Marak/Faker.js.git" 
+        "url"     : "https://github.com/shkuropat/Charlatan.git" 
     },
     "bugs"        : { "url": "https://github.com/shkuropat/Charlatan/issues" },
     "license"     : { "type": "MIT", "url": "https://github.com/shkuropat/Charlatan/blob/master/LICENSE" },
