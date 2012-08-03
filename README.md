@@ -1,7 +1,7 @@
 Charlatan
 =========
 
-This port of Perl's Data::Faker library, that generates fake data such as names, addresses, and phone numbers.
+This is node.js port of Perl's Data::Faker library, that generates fake data such as names, addresses, and phone numbers.
 
 See [API Documentation](http://shkuropat.github.com/Charlatan) for more details.
 
