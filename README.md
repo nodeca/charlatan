@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/shkuropat/Charlatan.png)](http://travis-ci.org/shkuropat/Charlatan)
 Charlatan
 =========
 
