@@ -13,7 +13,7 @@
     "bugs"        : { "url": "https://github.com/shkuropat/Charlatan/issues" },
     "license"     : { "type": "MIT", "url": "https://github.com/shkuropat/Charlatan/blob/master/LICENSE" },
     "repository"  : { "type": "git", "url": "git://github.com/shkuropat/Charlatan.git" },
-
+    "dependencies": { "js-yaml" : "~ 1.0.2" },
     "main"        : "./index.js",
     "engines"     : { "node": ">= 0.6.0" }
 }
