@@ -40,6 +40,12 @@ en:
       - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
         
   internet:
+    user_name:
+      - "#{Name.first_name}"
+      - "#{Name.last_name}_#{Name.suffix}"
+      - "#{Name.first_name}.#{Name.last_name}"
+      - "#{Name.first_name}_#{Name.last_name}"
+      - "#{Name.first_name}_#{Name.last_name}_#{Name.suffix}"
     free_email: [gmail.com, yahoo.com, hotmail.com]
     domain_suffix: [com, biz, info, name, net, org]
 
