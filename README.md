@@ -24,9 +24,9 @@ Or install bleeding edge version from GitHub repo:
 
 var Charlatan = require('charlatan');
 
-var name    = Charlatan.Name.name();       // Maybell Kunde II
-var email   = Charlatan.Internet.email();  // Walter.Dibbert@leslie.biz
-var company = Charlatan.Company.name();    // Lehner and Daughters
+var name    = Charlatan.Name.name();       // Joshua Lemke MD
+var email   = Charlatan.Internet.email();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
 ```
 
 # Locales
