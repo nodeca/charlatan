@@ -1,3 +1,7 @@
+0.1.1 / ???
+------------------
+* Fixed minor bugs in lorem helper (thanks to @hastebrot)
+
 0.1.0 / 2012-09-03
 ------------------
 * Add locale support
