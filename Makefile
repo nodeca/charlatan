@@ -12,25 +12,34 @@ CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) ma
 GITHUB_PROJ := shkuropat/${NPM_PACKAGE}
 SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
 
+LOCALES_PATH = config/locales/
+
+LOCALES = $(addsuffix .json,$(basename $(wildcard ${LOCALES_PATH}*.yml)))
+
 
 help:
 	echo "make help       - Print this help"
-	echo "make build			- Build source to single files (simple and minimized)"
+	#echo "make build			- Build source to single files (simple and minimized)"
 	echo "make lint       - Lint sources with JSHint"
 	echo "make test       - Lint sources and run all tests"
 	echo "make doc        - Build API docs"
 	echo "make dev-deps   - Install developer dependencies"
 	echo "make gh-pages   - Build and push API docs into gh-pages branch"
 	echo "make publish    - Set new version tag and publish npm package"
+	echo "make compile-locales"
+	echo "                - Compile locales to json format"
 	echo "make todo       - Find and list all TODOs"
 
 build-all: build-min
 
+
 build-single:
 	browserify ./lib/charlatan.js -o ./build/charlatan-${NPM_VERSION}.js
 
+
 build-min: build-single
 	uglifyjs -o ./build/charlatan-${NPM_VERSION}.min.js ./build/charlatan-${NPM_VERSION}.js
+
 
 lint:
 	if test ! `which jshint` ; then \
@@ -61,7 +70,7 @@ dev-deps:
 		exit 128 ; \
 		fi
 	npm install -g jshint
-	npm install -g browserify
+	npm install -g js-yaml
 	npm install -g uglifyjs
 	npm install --dev
 
@@ -84,7 +93,25 @@ gh-pages:
 	rm -rf ${TMP_PATH}
 
 
-publish:
+${LOCALES_PATH}%.json:
+	js-yaml -j $(basename $@).yml > $@
+
+
+compile-locales:
+	@if test ! `which js-yaml` ; then \
+		echo "You need 'js-yaml' installed in order to generate docs." >&2 ; \
+		echo "  $ npm install -g js-yaml" >&2 ; \
+		exit 128 ; \
+		fi
+	rm -f ${LOCALES_PATH}*.json
+	$(MAKE) $(LOCALES)
+
+
+publish: compile-locales
+	@if test 0 -ne `git status --porcelain config/locales | wc -l` ; then \
+		echo "Locales were changed. Recompile and commite locales." >&2 ; \
+		exit 128 ; \
+		fi
 	@if test 0 -ne `git status --porcelain | wc -l` ; then \
 		echo "Unclean working tree. Commit or stash changes first." >&2 ; \
 		exit 128 ; \
