@@ -12,10 +12,8 @@ CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) ma
 GITHUB_PROJ := shkuropat/${NPM_PACKAGE}
 SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
 
-LOCALES_PATH = config/locales/
-
-LOCALES = $(addsuffix .json,$(basename $(wildcard ${LOCALES_PATH}*.yml)))
-
+LOCALES_PATH = ./config/locales/
+COMPILED_LOCALES_PATH = ./.locales/
 
 help:
 	echo "make help       - Print this help"
@@ -93,22 +91,20 @@ gh-pages:
 	rm -rf ${TMP_PATH}
 
 
-${LOCALES_PATH}%.json:
-	js-yaml -j $(basename $@).yml > $@
-
-
 compile-locales:
 	@if test ! `which js-yaml` ; then \
 		echo "You need 'js-yaml' installed in order to generate docs." >&2 ; \
 		echo "  $ npm install -g js-yaml" >&2 ; \
 		exit 128 ; \
 		fi
-	rm -f ${LOCALES_PATH}*.json
-	$(MAKE) $(LOCALES)
+	mkdir ${COMPILED_LOCALES_PATH}
+	rm -f ${COMPILED_LOCALES_PATH}*.json
+	find ${LOCALES_PATH}*.yml -print | xargs -I {} basename {} '.yml' | \
+		xargs -I {} sh -c 'js-yaml -j ${LOCALES_PATH}{}.yml > ${COMPILED_LOCALES_PATH}{}.json'
 
 
 publish: compile-locales
-	@if test 0 -ne `git status --porcelain config/locales | wc -l` ; then \
+	@if test 0 -ne `git status --porcelain ${COMPILED_LOCALES_PATH} | wc -l` ; then \
 		echo "Locales were changed. Recompile and commite locales." >&2 ; \
 		exit 128 ; \
 		fi
