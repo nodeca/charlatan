@@ -26,6 +26,7 @@ help:
 	echo "make publish    - Set new version tag and publish npm package"
 	echo "make compile-locales"
 	echo "                - Compile locales to json format"
+	echo "make clean			- remove pre-compiled locales"
 	echo "make todo       - Find and list all TODOs"
 
 build-all: build-min
@@ -102,6 +103,8 @@ compile-locales:
 	find ${LOCALES_PATH}*.yml -print | xargs -I {} basename {} '.yml' | \
 		xargs -I {} sh -c 'js-yaml -j ${LOCALES_PATH}{}.yml > ${COMPILED_LOCALES_PATH}{}.json'
 
+clean:
+	rm -f ${COMPILED_LOCALES_PATH}*.json
 
 publish: compile-locales
 	@if test 0 -ne `git status --porcelain ${COMPILED_LOCALES_PATH} | wc -l` ; then \
