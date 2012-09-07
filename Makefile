@@ -26,7 +26,7 @@ help:
 	echo "make publish    - Set new version tag and publish npm package"
 	echo "make compile-locales"
 	echo "                - Compile locales to json format"
-	echo "make clean			- remove pre-compiled locales"
+	echo "make clean      - remove pre-compiled locales"
 	echo "make todo       - Find and list all TODOs"
 
 build-all: build-min
@@ -98,8 +98,8 @@ compile-locales:
 		echo "  $ npm install -g js-yaml" >&2 ; \
 		exit 128 ; \
 		fi
+	rm -rf ${COMPILED_LOCALES_PATH}
 	mkdir ${COMPILED_LOCALES_PATH}
-	rm -f ${COMPILED_LOCALES_PATH}*.json
 	find ${LOCALES_PATH}*.yml -print | xargs -I {} basename {} '.yml' | \
 		xargs -I {} sh -c 'js-yaml -j ${LOCALES_PATH}{}.yml > ${COMPILED_LOCALES_PATH}{}.json'
 
