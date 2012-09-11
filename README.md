@@ -1,6 +1,7 @@
-[![build status](https://secure.travis-ci.org/shkuropat/Charlatan.png)](http://travis-ci.org/shkuropat/Charlatan)
 Charlatan
 =========
+
+[![build status](https://secure.travis-ci.org/shkuropat/Charlatan.png)](http://travis-ci.org/shkuropat/Charlatan)
 
 This is node.js port of ruby's Faker [library](https://github.com/stympy/faker),
 that generates fake data such as names, addresses and phone numbers.
@@ -43,7 +44,7 @@ var Charlatan = require('charlatan');
 Charlatan.setLocale('en-us');
 Charlatan.Name.name();
 ```
-Also you can use your own locale in yaml or plain hash.
+Also you can use your own locale in yaml, json or plain hash.
 Yaml format see [here](https://github.com/shkuropat/Charlatan/blob/master/config/locales/en.yml)
 
 
@@ -55,6 +56,20 @@ Charlatan.Name.name();
 ```
 
 *Note:* If some phrase not found in current locale, then fallbacks to base language (and then to `en`), for example `ru_RU -> ru -> en`.
+
+# Contributing
+
+Use one topic branch per pull request.
+
+Do not commit to master in your fork.
+
+Provide a clean branch without any merge commits from upstream.
+
+You can install all developer dependencies by `make dev-deps` command.
+
+Use `make test` before commit.
+
+*Note:* Pre-compiled locales stored in `./locales`, remove it before patching package locales.
 
 # Credits
 
