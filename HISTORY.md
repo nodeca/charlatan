@@ -1,4 +1,4 @@
-0.1.1 / ???
+0.1.1 / 2010-09-11
 ------------------
 * Improve statup time
 * Support json as locale format
