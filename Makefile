@@ -70,7 +70,6 @@ dev-deps:
 		fi
 	npm install -g jshint
 	npm install -g js-yaml
-	npm install -g uglifyjs
 	npm install --dev
 
 
