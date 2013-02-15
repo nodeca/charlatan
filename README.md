@@ -29,7 +29,7 @@ var company = Charlatan.Company.name();    // Wilkinson LLC
 
 Different countries have different data formats. Charlatan support locales as solution of this problem.
 
-Currently available locales are [here](https://github.com/nodeca/charlatan/tree/master/config/locales),
+Currently available locales are [here](https://github.com/nodeca/charlatan/tree/master/lib/locales),
 `en` is [default](https://github.com/nodeca/charlatan/blob/master/config/locales/en-au.yml).
 
 ```javascript
@@ -57,4 +57,4 @@ Author [Eugene Shkuropat](https://github.com/shkuropat)
 
 Released under the MIT license. See [LICENSE][license] for details.
 
-[license]:  https://raw.github.com/nodeca/charlatan/master/LICENSE/master/LICENSE
+[license]:  https://raw.github.com/nodeca/charlatan/master/LICENSE
