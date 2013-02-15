@@ -9,7 +9,7 @@ REMOTE_NAME ?= origin
 REMOTE_REPO ?= $(shell git config --get remote.${REMOTE_NAME}.url)
 
 CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) master)
-GITHUB_PROJ := shkuropat/${NPM_PACKAGE}
+GITHUB_PROJ := nodeca/${NPM_PACKAGE}
 SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
 
 LOCALES_PATH = ./config/locales/
@@ -59,7 +59,7 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --output ./doc --link-format "${SRC_URL_FMT}" ./lib
+	ndoc
 
 
 dev-deps:
