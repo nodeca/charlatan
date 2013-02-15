@@ -77,10 +77,6 @@ gh-pages:
 
 
 publish:
-	@if test 0 -ne `git status --porcelain ${COMPILED_LOCALES_PATH} | wc -l` ; then \
-		echo "Locales were changed. Recompile and commite locales." >&2 ; \
-		exit 128 ; \
-		fi
 	@if test 0 -ne `git status --porcelain | wc -l` ; then \
 		echo "Unclean working tree. Commit or stash changes first." >&2 ; \
 		exit 128 ; \
