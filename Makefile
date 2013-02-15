@@ -12,9 +12,6 @@ CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) ma
 GITHUB_PROJ := nodeca/${NPM_PACKAGE}
 SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
 
-LOCALES_PATH = ./config/locales/
-COMPILED_LOCALES_PATH = ./.locales/
-
 help:
 	echo "make help       - Print this help"
 	echo "make lint       - Lint sources with JSHint"
