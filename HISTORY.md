@@ -1,4 +1,4 @@
-0.1.1 / 2010-09-11
+0.1.2 / ...
 ------------------
 * Repository moved to new location, updated links in doc
 * fixed linting for new requirements

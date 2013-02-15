@@ -3,10 +3,10 @@ Charlatan
 
 [![Build Status](https://travis-ci.org/nodeca/charlatan.png?branch=master)](https://travis-ci.org/nodeca/charlatan)
 
-This is node.js port of ruby's Faker [library](https://github.com/stympy/faker),
-that generates fake data such as names, addresses and phone numbers.
+This is node.js port of ruby's [Faker](https://github.com/stympy/faker) library,
+that generates fake identities for names, addresses, phone numbers, emails and others.
 
-See [API Documentation](http://nodeca.github.com/charlatan) for more details.
+See [API Documentation](http://nodeca.github.com/charlatan) for details.
 
 # Installation
 
@@ -18,8 +18,6 @@ Install Charlatan from npm registry:
 # Usage
 
 ```javascript
-'use strict';
-
 var Charlatan = require('charlatan');
 
 var name    = Charlatan.Name.name();       // Joshua Lemke MD
@@ -29,21 +27,18 @@ var company = Charlatan.Company.name();    // Wilkinson LLC
 
 # Locales
 
-Different country has different data formats.
-Charlatan support locales as solution of this problem.
+Different countries have different data formats. Charlatan support locales as solution of this problem.
 
-Avaliable locales see [here](https://github.com/nodeca/charlatan/tree/master/config/locales), `en` is [default](https://github.com/nodeca/charlatan/blob/master/config/locales/en-au.yml).
+Currently available locales are [here](https://github.com/nodeca/charlatan/tree/master/config/locales),
+`en` is [default](https://github.com/nodeca/charlatan/blob/master/config/locales/en-au.yml).
 
 ```javascript
-'use strict';
-
 var Charlatan = require('charlatan');
 Charlatan.setLocale('en-us');
 Charlatan.Name.name();
 ```
-Also you can use your own locale in yaml, json or plain hash.
-Yaml format see [here](https://github.com/nodeca/charlatan/blob/master/config/locales/en.yml)
 
+Also you can use your own locale in yaml, json or plain hash.
 
 ```javascript
 var Charlatan = require('charlatan');
@@ -52,21 +47,9 @@ Charlatan.setLocale(myLocaleName);
 Charlatan.Name.name();
 ```
 
-*Note:* If some phrase not found in current locale, then fallbacks to base language (and then to `en`), for example `ru_RU -> ru -> en`.
+__Note__: If phrase not found in current locale, charlatan tries to then fallback into to base language, 
+and then to `en`. For example `ru_RU -> ru -> en`.
 
-# Contributing
-
-Use one topic branch per pull request.
-
-Do not commit to master in your fork.
-
-Provide a clean branch without any merge commits from upstream.
-
-You can install all developer dependencies by `make dev-deps` command.
-
-Use `make test` before commit.
-
-*Note:* Pre-compiled locales stored in `./locales`, remove it before patching package locales.
 
 # Credits
 
