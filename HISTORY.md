@@ -1,3 +1,9 @@
+0.1.4 / 2013-02-26
+------------------
+
+* Fixed internet.userName & related things (@guzart, @shkuropat)
+
+
 0.1.3 / 2013-02-20
 ------------------
 
