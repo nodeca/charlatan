@@ -1,3 +1,10 @@
+0.1.5 / 2013-08-07
+------------------
+
+* Fixed locales fallback
+* Updated jshint options
+
+
 0.1.4 / 2013-02-26
 ------------------
 
