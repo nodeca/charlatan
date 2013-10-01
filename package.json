@@ -1,7 +1,7 @@
 {
     "name"        : "charlatan",
     "description" : "Fake identities generator for node.js (names, addresses, phones, IPs and others). Supports multiple languages.",
-    "version"     : "0.1.5",
+    "version"     : "0.1.6",
     "keywords"    : ["charlatan", "faker", "fake", "dummy", "identity", "test"],
     "homepage"    : "https://github.com/nodeca/charlatan",
 

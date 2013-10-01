@@ -1,47 +1,53 @@
+0.1.6 / 2013-10-01
+------------------
+
+- Improved en-gb postcode format
+
+
 0.1.5 / 2013-08-07
 ------------------
 
-* Fixed locales fallback
-* Updated jshint options
+- Fixed locales fallback
+- Updated jshint options
 
 
 0.1.4 / 2013-02-26
 ------------------
 
-* Fixed internet.userName & related things (@guzart, @shkuropat)
+- Fixed internet.userName & related things (@guzart, @shkuropat)
 
 
 0.1.3 / 2013-02-20
 ------------------
 
-* Added spanish locale, by @elcapo
+- Added spanish locale, by @elcapo
 
 
 0.1.2 / 2013-02-15
 ------------------
 
-* Repository moved to new location (nodeca), updated links in doc
-* Added more languages from original Faker, migrated to original format
-* Updated to new fast yaml parser & removed json cache
-* fixed linting for new requirements
+- Repository moved to new location (nodeca), updated links in doc
+- Added more languages from original Faker, migrated to original format
+- Updated to new fast yaml parser & removed json cache
+- fixed linting for new requirements
 
 
 0.1.1 / 2010-09-11
 ------------------
 
-* Improve statup time
-* Support json as locale format
-* Fixed minor bugs in lorem helper (thanks to @hastebrot)
+- Improve statup time
+- Support json as locale format
+- Fixed minor bugs in lorem helper (thanks to @hastebrot)
 
 
 0.1.0 / 2012-09-03
 ------------------
 
-* Add locale support
-* Total refactoring
+- Add locale support
+- Total refactoring
 
 
 0.0.1 / 2012-08-02
 ------------------
 
-* Alpha release.
+- Alpha release.
