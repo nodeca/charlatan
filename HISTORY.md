@@ -1,7 +1,13 @@
+0.1.7 / 2013-10-17
+------------------
+
+- Added street_suffix suitable for UK, by @mightymephisto
+
+
 0.1.6 / 2013-10-01
 ------------------
 
-- Improved en-gb postcode format
+- Improved en-gb postcode format, by @mightymephisto
 
 
 0.1.5 / 2013-08-07
