@@ -1,3 +1,9 @@
+0.1.8 / 2013-11-01
+------------------
+
+- Fixed letterify() function (added missing Y in alphabet array), by @kutrumbo
+
+
 0.1.7 / 2013-10-17
 ------------------
 
