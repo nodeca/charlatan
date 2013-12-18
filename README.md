@@ -38,12 +38,22 @@ Charlatan.setLocale('en-us');
 Charlatan.Name.name();
 ```
 
-Also you can use your own locale in yaml, json or plain hash.
+Also you can add your own locale data by passing a filename to require or a plain hash.
 
 ```javascript
 var Charlatan = require('charlatan');
 Charlatan.addLocale(myLocaleName, myLocaleFile);
 Charlatan.setLocale(myLocaleName);
+Charlatan.Name.name();
+```
+
+To allow reading YAML files compatible with Faker load `js-yaml` before loading the locale file:
+
+```javascript
+require('js-yaml'); // adds a .yml require handler
+var Charlatan = require('charlatan');
+Charlatan.addLocale('is', 'is.yml');
+Charlatan.setLocale('is');
 Charlatan.Name.name();
 ```
 

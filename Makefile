@@ -8,6 +8,9 @@ TMP_PATH    := /tmp/${NPM_PACKAGE}-$(shell date +%s)
 REMOTE_NAME ?= origin
 REMOTE_REPO ?= $(shell git config --get remote.${REMOTE_NAME}.url)
 
+EXPORT_NAME ?= Charlatan
+LOCALES     ?= $(shell find lib/locales -name '*.json')
+
 CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut --bytes=-6) master)
 GITHUB_PROJ := nodeca/${NPM_PACKAGE}
 SRC_URL_FMT := https://github.com/${GITHUB_PROJ}/blob/${CURR_HEAD}/{file}\#L{line}
@@ -85,6 +88,25 @@ publish:
 	git tag ${NPM_VERSION} && git push origin ${NPM_VERSION}
 	npm publish https://github.com/${GITHUB_PROJ}/tarball/${NPM_VERSION}
 
+standalone:
+	@if test ! `which browserify` ; then \
+		echo "You need 'browserify' installed." >&2 ; \
+		echo "  Run 'npm install -g browserify' to install." >&2 ; \
+		exit 128 ; \
+		fi
+	rm -rf build
+	mkdir -p build
+	echo "var ${EXPORT_NAME} = require('../lib/charlatan');" >> build/.standalone.js
+	echo "var Data = require('../lib/charlatan/data');" >> build/.standalone.js
+	echo "module.exports = ${EXPORT_NAME};" >> build/.standalone.js
+	echo "" >> build/.standalone.js
+	for locale in ${LOCALES}; do \
+		echo "Data.addLocale('$$(basename $$locale .json)'," >> build/.standalone.js ; \
+		cat $$locale >> build/.standalone.js ; \
+		echo "['$$(basename $$locale .json)']);" >> build/.standalone.js ; \
+		done
+	echo "Data.setLocale(Data.baseLocale());" >> build/.standalone.js
+	browserify -r ./build/.standalone -s ${EXPORT_NAME} -o build/charlatan.standalone.js && rm ./build/.standalone.js
 
 todo:
 	grep 'TODO' -n -r ./lib 2>/dev/null || test true
