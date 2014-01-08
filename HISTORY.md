@@ -1,3 +1,9 @@
+0.1.9 / 2014-01-08
+------------------
+
+- Maintenance release (js-yaml dependency update)
+
+
 0.1.8 / 2013-11-01
 ------------------
 
