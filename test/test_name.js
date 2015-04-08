@@ -2,6 +2,8 @@
 
 /* globals it, describe */
 
+require('./_utils');
+
 var assert = require('assert');
 var tester = require('../').Name;
 

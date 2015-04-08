@@ -1,6 +1,8 @@
 'use strict';
 
-/* globals it, describe, before */
+/* globals it, describe, before, beforeEach */
+
+require('./_utils');
 
 var assert = require('assert');
 var faker = require('../');
