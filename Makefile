@@ -32,6 +32,12 @@ lint:
 
 
 test: lint
+	mocha
+
+
+coverage:
+	rm -rf coverage
+	istanbul cover node_modules/.bin/_mocha
 
 
 doc:
