@@ -34,7 +34,7 @@ Currently available locales are [here](https://github.com/nodeca/charlatan/tree/
 
 ```javascript
 var Charlatan = require('charlatan');
-Charlatan.setLocale('en-us');
+Charlatan.setLocale('en-US');
 Charlatan.Name.name();
 ```
 
@@ -48,7 +48,7 @@ Charlatan.Name.name();
 ```
 
 __Note__: If phrase not found in current locale, charlatan tries to then fallback into to base language, 
-and then to `en`. For example `ru_RU -> ru -> en`.
+and then to `en`. For example `ru-RU -> ru -> en`.
 
 
 # Credits
