@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals it, describe, before */
+/* globals it, describe, before, after */
 
 require('./_utils');
 
@@ -39,5 +39,9 @@ describe('finance', function () {
     valid_ones.forEach(function (x) {
       assert.equal(faker.Finance.creditCard(x), x);
     });
+  });
+
+  after(function () {
+    faker.setLocale('en');
   });
 });

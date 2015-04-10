@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals it, describe, before, beforeEach */
+/* globals it, describe, before, beforeEach, after */
 
 require('./_utils');
 
@@ -46,5 +46,9 @@ describe('street', function () {
 
   it('timezone_support', function () {
     assert.equal('Pacific/Pago_Pago', faker.Address.timeZone());
+  });
+
+  after(function () {
+    faker.setLocale(null);
   });
 });
