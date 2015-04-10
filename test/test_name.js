@@ -19,4 +19,8 @@ describe('Name', function () {
   it('suffix', function () {
     assert(tester.suffix().match(/[A-Z][a-z]*\.?/));
   });
+
+  it('title', function () {
+    assert(tester.title().match(/ /));
+  });
 });

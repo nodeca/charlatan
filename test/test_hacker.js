@@ -5,30 +5,30 @@
 require('./_utils');
 
 var assert = require('assert');
-var hacker = require('../').Hacker;
+var tester = require('../').Hacker;
 
 describe('Hacker', function () {
   it('noun', function () {
-    assert(hacker.noun().match(/\w+/));
+    assert(tester.noun().match(/\w+/));
   });
   
   it('abbreviation', function () {
-    assert(hacker.abbreviation().match(/\w+/));
+    assert(tester.abbreviation().match(/\w+/));
   });
   
   it('adjective', function () {
-    assert(hacker.adjective().match(/\w+/));
+    assert(tester.adjective().match(/\w+/));
   });
   
   it('verb', function () {
-    assert(hacker.verb().match(/\w+/));
+    assert(tester.verb().match(/\w+/));
   });
   
   it('ingverb', function () {
-    assert(hacker.ingverb().match(/\w+/));
+    assert(tester.ingverb().match(/\w+/));
   });
   
   it('saySomethingSmart', function () {
-    assert(hacker.saySomethingSmart().match(/\w+/));
+    assert(tester.saySomethingSmart().match(/\w+/));
   });
 });
