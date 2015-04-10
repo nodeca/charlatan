@@ -10,9 +10,9 @@ var tester = require('../').Bitcoin;
 describe('Bitcoin', function () {
   it('integer division', function () {
     function addTest(divident, quotient, remainder) {
-      var buf = Buffer(divident);
+      var buf = new Buffer(divident);
       assert.equal(tester._divide(buf, 58), remainder);
-      assert.deepEqual(buf, Buffer(quotient));
+      assert.deepEqual(buf, new Buffer(quotient));
     }
 
     addTest([ 0, 0 ], [ 0, 0 ], 0);
@@ -35,6 +35,12 @@ describe('Bitcoin', function () {
     var buf = new Buffer('003c176e659bea0f29a3e9bf7880c112b1b31b4dc826268187', 'hex');
 
     assert.equal(tester._base58(buf), '16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS');
+  });
+
+  it('checksum', function () {
+    assert.equal(tester._addressFor('main', new Array(41).join('0')), '1111111111111111111114oLvT2');
+    assert.equal(tester._addressFor('main', new Array(41).join('f')), '1QLbz7JHiBTspS962RLKV8GndWFwi5j6Qr');
+    assert.equal(tester._addressFor('testnet', new Array(41).join('0')), 'mfWxJ45yp2SFn7UciZyNpvDKrzbhyfKrY8');
   });
 
   it('address', function () {

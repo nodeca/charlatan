@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals it, describe, before, after */
+/* globals it, describe */
 
 require('./_utils');
 

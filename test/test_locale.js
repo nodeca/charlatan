@@ -36,9 +36,9 @@ describe('locale', function () {
 
   it('regex', function () {
     faker.setLocale('en-GB');
-    var re = /[A-PR-UWYZ][A-HK-Y]?[0-9][ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/
+    var re = /[A-PR-UWYZ][A-HK-Y]?[0-9][ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/;
     var result = faker.Address.postcode();
-    assert(result.match(re), result + " didn't match " + re);
+    assert(result.match(re), result + ' didn\'t match ' + re);
   });
 
   it('available_locales', function () {
