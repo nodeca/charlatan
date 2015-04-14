@@ -1,6 +1,13 @@
 
 'use strict';
 
+//
+// Print out `Math.random()` seed for tests.
+//
+// All our tests are random-based, so with this seed, if CI run fails we can
+// reproduce results more easily.
+//
+
 var seed = process.env.MT_SEED || Math.floor(Math.random() * Math.pow(2, 32));
 console.log('Using seed:', seed);
 
