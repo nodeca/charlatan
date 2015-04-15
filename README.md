@@ -7,20 +7,23 @@ Charlatan
 
 > Fake identities generator for node.js (names, addresses, phones, IPs and others).
 
-This is node.js port of ruby's [Faker](https://github.com/stympy/faker) library,
-that generates fake identities for names, addresses, phone numbers, emails and others.
+This is node.js port of ruby's [Faker](https://github.com/stympy/faker) library
+(v1.4.3 now), that generates fake identities for names, addresses, phone numbers,
+emails and others.
 
-See [API Documentation](http://nodeca.github.com/charlatan) for details.
+[API Documentation](http://nodeca.github.com/charlatan).
 
 
-# Installation
+Installation
+------------
 
 ```bash
 $ npm install charlatan
 ```
 
 
-# Usage
+Usage
+-----
 
 ```js
 var Charlatan = require('charlatan');
@@ -31,7 +34,8 @@ var company = Charlatan.Company.name();    // Wilkinson LLC
 ```
 
 
-# Locales
+Locales
+-------
 
 Different countries have different data formats. Charlatan support locales as
 solution of this problem.
@@ -58,7 +62,8 @@ __Note__: If phrase not found in current locale, charlatan tries to then
 fallback into to base language, and then to `en`. For example `ru-RU -> ru -> en`.
 
 
-# Credits
+Credits
+-------
 
 Author [Eugene Shkuropat](https://github.com/shkuropat)
 

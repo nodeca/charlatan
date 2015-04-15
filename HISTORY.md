@@ -1,13 +1,20 @@
+1.0.0 / 2015-04-15
+------------------
+
+- Major rewrite: sync with upstream, Faker 1.4.3.
+- Tests.
+
+
 0.1.9 / 2014-01-08
 ------------------
 
-- Maintenance release (js-yaml dependency update)
+- Maintenance release (js-yaml dependency update).
 
 
 0.1.8 / 2013-11-01
 ------------------
 
-- Fixed letterify() function (added missing Y in alphabet array), by @kutrumbo
+- Fixed letterify() function (added missing Y in alphabet array), by @kutrumbo.
 
 
 0.1.7 / 2013-10-17
