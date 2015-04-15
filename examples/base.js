@@ -1,6 +1,9 @@
 'use strict';
 
+/*eslint-disable no-console*/
+
 var Charlatan = require('../index.js');
+
 Charlatan.setLocale('en-us');
 
 var user = {
@@ -8,4 +11,5 @@ var user = {
   company: Charlatan.Company.name(),
   motto: Charlatan.Lorem.sentence()
 };
+
 console.dir(user);

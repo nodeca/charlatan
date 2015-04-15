@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe */
-
 require('./_utils');
 
 var assert = require('assert');
@@ -33,6 +31,6 @@ describe('Company', function () {
   });
 
   it('logo', function () {
-	  assert(tester.logo().match(/http:\/\/pigment.github.io\/fake-logos\/logos\/medium\/color\/\d+\.png/));
+    assert(tester.logo().match(/http:\/\/pigment.github.io\/fake-logos\/logos\/medium\/color\/\d+\.png/));
   });
 });

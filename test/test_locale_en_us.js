@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe, afterEach */
-
 require('./_utils');
 
 var assert = require('assert');
@@ -27,11 +25,11 @@ describe('locale: en-US', function () {
   it('us_phone_methods_with_en_us_locale', function () {
     faker.setLocale('en-US');
 
-    assert.equal(typeof(faker.PhoneNumber.areaCode()), 'string');
+    assert.equal(typeof faker.PhoneNumber.areaCode(), 'string');
     assert(!Number.isNaN(+faker.PhoneNumber.areaCode()));
     assert.equal(faker.PhoneNumber.areaCode().length, 3);
 
-    assert.equal(typeof(faker.PhoneNumber.exchangeCode()), 'string');
+    assert.equal(typeof faker.PhoneNumber.exchangeCode(), 'string');
     assert(!Number.isNaN(+faker.PhoneNumber.exchangeCode()));
     assert.equal(faker.PhoneNumber.exchangeCode().length, 3);
   });
@@ -39,6 +37,7 @@ describe('locale: en-US', function () {
   it('validity_of_phone_method_output', function () {
     faker.setLocale('en-US');
 
+    /*eslint-disable max-len*/
     // got the following regex from http://stackoverflow.com/a/123666/1210055 as an expression of the NANP standard.
     var us_number_validation_regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
     assert(us_number_validation_regex.test(faker.PhoneNumber.phoneNumber()));

@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe, before, after */
-
 require('./_utils');
 
 var assert = require('assert');

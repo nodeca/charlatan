@@ -1,7 +1,6 @@
 'use strict';
 
-/* globals it, describe */
-/* jshint loopfunc: true */
+/*eslint-disable no-loop-func*/
 
 require('./_utils');
 

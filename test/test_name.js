@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe */
-
 require('./_utils');
 
 var assert = require('assert');
@@ -11,11 +9,11 @@ describe('Name', function () {
   it('name', function () {
     assert(tester.name().match(/(\w+\.? ?){2,3}/));
   });
-  
+
   it('prefix', function () {
     assert(tester.prefix().match(/[A-Z][a-z]+\.?/));
   });
-  
+
   it('suffix', function () {
     assert(tester.suffix().match(/[A-Z][a-z]*\.?/));
   });

@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe */
-
 require('./_utils');
 
 var assert = require('assert');
@@ -19,6 +17,7 @@ describe('Base', function () {
   });
 
   it('regexify', function () {
+    /*eslint-disable max-len*/
     var dict = {
       'uk post code': /^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR 0AA)$/,
       'us phone': /^(1-?)[2-8][0-1][0-9]-\d{3}-\d{4}$/

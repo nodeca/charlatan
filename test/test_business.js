@@ -1,7 +1,4 @@
-
 'use strict';
-
-/* globals it, describe */
 
 require('./_utils');
 
@@ -20,14 +17,14 @@ describe('Business', function () {
     assert(credit_card_number_list.indexOf(number1) !== -1);
     assert(credit_card_number_list.indexOf(number2) !== -1);
   });
-  
+
   it('credit_card_expiry_date', function () {
     var date1 = Date.parse(tester.creditCardExpiryDate());
     var date2 = Date.parse(tester.creditCardExpiryDate());
     assert(credit_card_number_expiry_dates.map(Date.parse).indexOf(date1) !== -1);
     assert(credit_card_number_expiry_dates.map(Date.parse).indexOf(date2) !== -1);
   });
-  
+
   it('credit_card_type', function () {
     var type1 = tester.creditCardType();
     var type2 = tester.creditCardType();

@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals it, describe, before, beforeEach, after */
-
 require('./_utils');
 
 var assert = require('assert');
@@ -11,14 +9,14 @@ describe('street', function () {
   before(function () {
     faker.addLocale('shire', {
       address: {
-        street_name: ['#{street_prefix} #{street_root} #{street_suffix}'],
-        street_prefix: ['Wide'],
-        street_root: ['Cheerful'],
-        street_suffix: ['Path'],
-        secondary_address: ['(Green Door)'],
-        street_address: ['#{street_name} #{building_number}'],
-        building_number: ['#'],
-        time_zone: ['Pacific/Pago_Pago']
+        street_name: [ '#{street_prefix} #{street_root} #{street_suffix}' ],
+        street_prefix: [ 'Wide' ],
+        street_root: [ 'Cheerful' ],
+        street_suffix: [ 'Path' ],
+        secondary_address: [ '(Green Door)' ],
+        street_address: [ '#{street_name} #{building_number}' ],
+        building_number: [ '#' ],
+        time_zone: [ 'Pacific/Pago_Pago' ]
       }
     });
   });

@@ -1,18 +1,16 @@
-
 'use strict';
-
-/* globals it, describe, beforeEach, after */
 
 require('./_utils');
 
 var assert = require('assert');
 var fs = require('fs');
+var path = require('path');
 var YAML = require('js-yaml');
 var faker = require('../');
 var locales = {};
 
 [ 'en', 'en-BORK' ].forEach(function (x) {
-  var data = YAML.safeLoad(fs.readFileSync(__dirname + '/../lib/locales/' + x + '.yml', 'utf8'));
+  var data = YAML.safeLoad(fs.readFileSync(path.join(__dirname, '/../lib/locales/', x + '.yml'), 'utf8'));
   locales[x] = data[x].faker;
 });
 

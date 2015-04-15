@@ -1,7 +1,4 @@
-
 'use strict';
-
-/* globals it, describe */
 
 require('./_utils');
 
@@ -13,11 +10,11 @@ describe('Commerce', function () {
   it('color', function () {
     assert(tester.color().match(/[a-z]+\.?/));
   });
-  
+
   it('department', function () {
     assert(tester.department().match(/[A-Z][a-z]+\.?/));
   });
-  
+
   it('single_department_should_not_contain_separators', function () {
     assert(/^[A-Za-z]+$/.test(tester.department(1)));
   });

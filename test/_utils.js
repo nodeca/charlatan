@@ -9,6 +9,7 @@
 //
 
 var seed = process.env.MT_SEED || Math.floor(Math.random() * Math.pow(2, 32));
+/*eslint-disable no-console*/
 console.log('Using seed:', seed);
 
 var MersenneTwister = require('mersenne-twister');

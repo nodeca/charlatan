@@ -1,7 +1,4 @@
-
 'use strict';
-
-/* globals it, describe */
 
 require('./_utils');
 
@@ -16,7 +13,7 @@ describe('Lorem', function () {
   it('character', function () {
     assert.equal(tester.character().length, 1);
   });
-  
+
   it('character_type', function () {
     assert.equal(typeof tester.character(), 'string');
   });
@@ -62,10 +59,10 @@ describe('Lorem', function () {
   });
 
   it('array_count_param', function () {
-    var cs = tester.characters([1, 4]);
-    var ws = tester.words([1, 4]);
-    var ss = tester.sentences([1, 4]);
-    var ps = tester.paragraphs([1, 4]);
+    var cs = tester.characters([ 1, 4 ]);
+    var ws = tester.words([ 1, 4 ]);
+    var ss = tester.sentences([ 1, 4 ]);
+    var ps = tester.paragraphs([ 1, 4 ]);
 
     assert(cs.length === 1 || cs.length === 4);
     assert(ws.length === 1 || ws.length === 4);
