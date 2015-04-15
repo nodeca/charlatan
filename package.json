@@ -11,6 +11,7 @@
     "test"
   ],
   "author": "Eugene Shkuropat <e.shkuropat@gmail.com>",
+  "homepage": "https://github.com/nodeca/charlatan",
   "repository": "nodeca/charlatan",
   "license": "MIT",
   "dependencies": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "eslint": "0.18.0",
     "eslint-plugin-nodeca": "^1.0.3",
+    "istanbul": "*",
     "mocha": "^2.2.4",
     "mersenne-twister": "1"
   },

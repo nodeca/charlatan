@@ -1,6 +1,4 @@
-/build/
-/tmp/
-/node_modules/
-/doc/
-/coverage/
+node_modules
+doc
+coverage
 *.log
