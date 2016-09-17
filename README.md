@@ -11,6 +11,11 @@ This is node.js port of ruby's [Faker](https://github.com/stympy/faker) library
 (v1.4.3 now), that generates fake identities for names, addresses, phone numbers,
 emails and others.
 
+`browserify` is supported with some differences:
+
+- All existing languages are bundled at once.
+- Bitcoin module dropped.
+
 [API Documentation](http://nodeca.github.com/charlatan).
 
 
