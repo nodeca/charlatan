@@ -27,6 +27,9 @@ test: lint
 	./node_modules/.bin/mocha
 
 
+update_browser_data:
+	node ./support/update_browser_data.js
+
 coverage:
 	rm -rf coverage
 	./node_modules/.bin/istanbul cover node_modules/.bin/_mocha

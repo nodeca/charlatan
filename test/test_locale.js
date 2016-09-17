@@ -20,6 +20,14 @@ describe('locale', function () {
     faker.setLocale('en-BORK');
   });
 
+  it('browser data should be actual', function () {
+    assert.deepEqual(
+      /* eslint-disable global-require */
+      require('../support/utils').all_locales(),
+      require('../lib/locales_browser_data.json')
+    );
+  });
+
   it('configured_locale_translation', function () {
     assert.equal(faker.translate('faker.lorem.words')[0], locales['en-BORK'].lorem.words[0]);
   });

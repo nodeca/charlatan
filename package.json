@@ -14,6 +14,10 @@
   "homepage": "https://github.com/nodeca/charlatan",
   "repository": "nodeca/charlatan",
   "license": "MIT",
+  "browser": {
+    "./lib/locales.js": "./lib/locales_browser.js",
+    "./lib/charlatan/bitcoin.js": false
+  },
   "dependencies": {
     "js-yaml": "^3.2.7"
   },
