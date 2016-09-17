@@ -31,6 +31,7 @@ describe('Lorem', function () {
   // Words delivered by a standard request should be on the standard wordlist.
   it('standard_words', function () {
     var words = tester.words(1000);
+
     words.forEach(function (w) {
       assert(standard_wordlist.indexOf(w) !== -1);
     });
@@ -39,6 +40,7 @@ describe('Lorem', function () {
   // Words requested from the supplemental list should all be in that list.
   it('supplemental_words', function () {
     var words = tester.words(1000, true);
+
     words.forEach(function (w) {
       assert(complete_wordlist.indexOf(w) !== -1);
     });

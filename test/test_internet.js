@@ -1,6 +1,6 @@
 'use strict';
 
-/*eslint-disable no-loop-func*/
+/* eslint-disable no-loop-func */
 
 require('./_utils');
 
@@ -47,6 +47,7 @@ describe('Internet', function () {
   it('password_max_with_integer_arg', function () {
     for (var i = 0; i < 32; i++) {
       var j = i + 4;
+
       assert(tester.password(i, j).length <= j);
     }
   });

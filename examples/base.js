@@ -1,6 +1,6 @@
 'use strict';
 
-/*eslint-disable no-console*/
+/* eslint-disable no-console */
 
 var Charlatan = require('../index.js');
 

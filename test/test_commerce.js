@@ -49,6 +49,7 @@ describe('Commerce', function () {
   it('department_should_have_no_duplicate_categories', function () {
     function uniq(arr) {
       var h = {};
+
       arr.forEach(function (i) {
         h[i] = 1;
       });
@@ -56,8 +57,8 @@ describe('Commerce', function () {
     }
 
     var department = tester.department(10, true);
-
     var departments = department.split(/[,& ]+/);
+
     assert.deepEqual(departments.sort(), uniq(departments).sort());
   });
 

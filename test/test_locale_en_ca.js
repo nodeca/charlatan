@@ -12,6 +12,7 @@ describe('locale: en-CA', function () {
 
   it('ca_postcode', function () {
     var expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/;
+
     assert(expected.test(faker.Address.postcode()));
   });
 

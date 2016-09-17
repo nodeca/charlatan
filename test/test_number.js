@@ -27,6 +27,7 @@ describe('Number', function () {
     assert(tester.digit().match(/[0-9]{1}/));
 
     var digits = {};
+
     for (var i = 0; i < 1000; i++) {
       digits[tester.digit()] = 1;
     }
@@ -36,6 +37,7 @@ describe('Number', function () {
   it('between', function () {
     for (var i = 0; i < 100; i++) {
       var random_number = tester.between(-50, 50);
+
       assert(random_number >= -50, 'Expected >= -50, but got ' + random_number);
       assert(random_number <=  50, 'Expected <= 50, but got ' + random_number);
     }
@@ -44,6 +46,7 @@ describe('Number', function () {
   it('positive', function () {
     for (var i = 0; i < 100; i++) {
       var random_number = tester.positive(1, 100);
+
       assert(random_number >= 1,   'Expected >= 1, but got ' + random_number);
       assert(random_number <= 100, 'Expected <= 100, but got ' + random_number);
     }
@@ -52,6 +55,7 @@ describe('Number', function () {
   it('negative', function () {
     for (var i = 0; i < 100; i++) {
       var random_number = tester.negative(-1, -100);
+
       assert(random_number <= -1,   'Expected <= -1, but got ' + random_number);
       assert(random_number >= -100, 'Expected >= -100, but got ' + random_number);
     }
@@ -59,18 +63,21 @@ describe('Number', function () {
 
   it('force_positive', function () {
     var random_number = tester.positive(-1, -100);
+
     assert(random_number >= 1,   'Expected >= 1, but got ' + random_number);
     assert(random_number <= 100, 'Expected <= 100, but got ' + random_number);
   });
 
   it('force_negative', function () {
     var random_number = tester.negative(1, 100);
+
     assert(random_number <= -1,   'Expected <= -1, but got ' + random_number);
     assert(random_number >= -100, 'Expected >= -100, but got ' + random_number);
   });
 
   it('parameters_order', function () {
     var random_number = tester.between(100, 1);
+
     assert(random_number >= 1,   'Expected >= 1, but got ' + random_number);
     assert(random_number <= 100, 'Expected <= 100, but got ' + random_number);
   });

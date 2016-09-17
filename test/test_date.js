@@ -12,6 +12,7 @@ describe('Date', function () {
 
     for (var i = 0; i < 100; i++) {
       var random_date = tester.between(from, to);
+
       assert(random_date >= from);
       assert(random_date <= to);
     }
@@ -22,6 +23,7 @@ describe('Date', function () {
 
     for (var i = 0; i < 100; i++) {
       var random_date = tester.forward(5);
+
       assert(random_date > today);
     }
   });
@@ -31,6 +33,7 @@ describe('Date', function () {
 
     for (var i = 0; i < 100; i++) {
       var random_date = tester.backward(5);
+
       assert(random_date < today);
     }
   });
@@ -48,11 +51,13 @@ describe('Date', function () {
   it('birthday', function () {
     var min = 40;
     var max = 90;
+
     for (var i = 0; i < 100; i++) {
       var t = new Date();
       var date_min = new Date(t.getFullYear() - min, t.getMonth(), t.getDay());
       var date_max = new Date(t.getFullYear() - max, t.getMonth(), t.getDay());
       var birthday = tester.birthday(min, max);
+
       assert(birthday > date_max);
       assert(birthday < date_min);
     }
@@ -61,11 +66,13 @@ describe('Date', function () {
   it('default_birthday', function () {
     var min = 10;
     var max = 65;
+
     for (var i = 0; i < 100; i++) {
       var t = new Date();
       var date_min = new Date(t.getFullYear() - min, t.getMonth(), t.getDay());
       var date_max = new Date(t.getFullYear() - max, t.getMonth(), t.getDay());
       var birthday = tester.birthday();
+
       assert(birthday > date_max);
       assert(birthday < date_min);
     }

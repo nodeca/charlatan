@@ -11,6 +11,7 @@ var locales = {};
 
 [ 'en', 'en-BORK' ].forEach(function (x) {
   var data = YAML.safeLoad(fs.readFileSync(path.join(__dirname, '/../lib/locales/', x + '.yml'), 'utf8'));
+
   locales[x] = data[x].faker;
 });
 
@@ -34,8 +35,10 @@ describe('locale', function () {
 
   it('regex', function () {
     faker.setLocale('en-GB');
+
     var re = /[A-PR-UWYZ][A-HK-Y]?[0-9][ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/;
     var result = faker.Address.postcode();
+
     assert(result.match(re), result + ' didn\'t match ' + re);
   });
 

@@ -9,6 +9,7 @@ describe('Bitcoin', function () {
   it('integer division', function () {
     function addTest(divident, quotient, remainder) {
       var buf = new Buffer(divident);
+
       assert.equal(tester._divide(buf, 58), remainder);
       assert.deepEqual(buf, new Buffer(quotient));
     }

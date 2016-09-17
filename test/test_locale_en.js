@@ -20,6 +20,7 @@ describe('locale: en', function () {
     faker.setLocale('en-US');
 
     var expected = /\d{5}(\-\d{4})?/;
+
     assert(expected.test(faker.Address.zipCode()));
 
     faker.setLocale(null);

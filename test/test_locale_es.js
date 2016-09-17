@@ -11,6 +11,7 @@ var locales = {};
 
 [ 'en', 'es' ].forEach(function (x) {
   var data = YAML.safeLoad(fs.readFileSync(path.join(__dirname, '/../lib/locales/', x + '.yml'), 'utf8'));
+
   locales[x] = data[x].faker;
 });
 
