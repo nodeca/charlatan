@@ -18,6 +18,10 @@
     "./lib/locales.js": "./lib/locales_browser.js",
     "./lib/charlatan/bitcoin.js": false
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "dependencies": {
     "js-yaml": "^3.2.7"
   },
