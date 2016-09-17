@@ -1,5 +1,3 @@
-PATH        := ./node_modules/.bin:${PATH}
-
 NPM_PACKAGE := $(shell node -e 'process.stdout.write(require("./package.json").name)')
 NPM_VERSION := $(shell node -e 'process.stdout.write(require("./package.json").version)')
 
@@ -22,26 +20,21 @@ help:
 	echo "make todo       - Find and list all TODOs"
 
 lint:
-	eslint --reset .
+	./node_modules/.bin/eslint .
 
 
 test: lint
-	mocha
+	./node_modules/.bin/mocha
 
 
 coverage:
 	rm -rf coverage
-	istanbul cover node_modules/.bin/_mocha
+	./node_modules/.bin/istanbul cover node_modules/.bin/_mocha
 
 
 doc:
-	@if test ! `which ndoc` ; then \
-		echo "You need 'ndoc' installed in order to generate docs." >&2 ; \
-		echo "  $ npm install -g ndoc" >&2 ; \
-		exit 128 ; \
-		fi
 	rm -rf ./doc
-	ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
+	./node_modules/.bin/ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
 
 
 gh-pages:

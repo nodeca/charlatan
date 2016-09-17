@@ -64,6 +64,7 @@ describe('Internet', function () {
   });
 
   it('ip_v4_address', function () {
+    /* eslint-disable new-cap */
     assert.equal(4, tester.IPv4().split('.').length);
 
     var max = 0;
